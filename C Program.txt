@@ -1,0 +1,939 @@
+1: Preprocessor(#) : 
+ -> Linking Wanted files
+    => it include all header files
+ -> Removing Unwanted files
+    => - it removes all documentation
+ -> Macro's
+    => 
+
+#include<stdio.h>
+//this is header line
+
+
+2:Compilation: 
+   -> Compiler: 
+	 -> Code Verification 
+	 -> it converts high level code to mid level code(Mnemonics)
+
+  ->Assembler: 
+	 -> Converts mid level code to low level code(binary format 1/0)
+
+3.Linked and Loader : 
+  -> Linker links native os call to the file and convert into os compatibility file
+  -> Loader loads the program to terminal and starts the execution
+
+Structure of C programming: 
+-> Documentation 
+    => Notes which help a reader to understand
+   Single line documentation : 
+     syntax: //comment line
+   Multi line Documentation : 
+     syntax : 
+		*/
+			...
+			comment lines 
+			...
+		/*
+-> Header Files :  
+    
+ 	eg: # include<stdio.h> 
+   
+	    # -> Preprocessor
+   	    <> -> Header file representation
+   	    stdio.h -> Standard Input & Output header file
+	    
+	   # include "path"
+   	    "" -> Directory path
+		eg: c://programfiles/.....
+
+
+-> Structure/ Union Declarations 
+-> Function/Function Declaration : 
+-> Main function 
+-> body of main function 
+
+
+
+
+
+#include<stdio.h>
+void calclute(); //function declaration 
+void cal();
+int main()
+{
+}
+ void cal()//function 
+{
+}
+void calclute()
+{
+}
+
+Output format: 
+ -> 
+
+   syntax : 
+     printf("message");
+
+variables : 
+ -> Should not start with numbers 
+ -> Should not use keywords(Reserve Words- words which has functionality)
+ -> only '_' (underscore is allowed) 
+ 
+
+var1			1var
+var_1			1_var
+_var 			var_
+first var		first_var
+var-1 
+
+
+Data Types: 
+Keywords which defined type of data can be stored in a variable
+
+
+-> Primitive Data types  -> single value
+   
+-> Non Primitive Data Types -> Multiple Values 
+
+1 Gb => 1024 MB - 1Mb => 1024 Kb - 1kb => 1024 bytes - 1byte - 8 bits
+
+Primitive Datatypes :
+ 
+ -> Non Floating(Decimal) Values : 
+     int     -> Integer   -> 2 bytes -> 
+
+2^16= > 65536 
+
+Range: 0-65535 
+ -32768 -> 32767
+
+
+-> char  -> Characters  - 1byte/8bits 
+     
+    char ch = 'a';
+
+ Range: 0-255
+      -128 ->127
+
+ASCII -> American Standard code for information interchange
+
+ '0' -> '9' => 48 - 57
+
+ 'A' -> 'Z' => 65- 90
+ 
+ 'a' -> 'z' => 97 -122
+
+float => 4 bytes 
+
+ to store decimal values 
+
+ float num = 45.368;
+
+    -> 6 decimal values 
+
+float num = 741.312546;
+
+
+double => 8 bytes 
+  to store decimal value 
+  
+ double num1 = 487.6579;
+   -> 15 Decimals 
+
+
+void -> non Value representation 
+
+
+Format Specifiers : 
+ -> to specify the format/datatype 
+
+int a = 20;
+
+expected message : 
+
+value of a is 20
+
+20 is the value a
+
+a : 20 
+
+
+char -> %c
+int  -> %d/%i
+float-> %f    or %.2f or %.3f
+double-> %lf
+String -> %s or  %[^/n]s
+
+
+float a = 45.23647;
+
+int a = 20, b = 30 ;
+
+expected message : 
+
+printf("value of a is %d",a);
+
+value of a is 20 
+
+printf("%d is the value a & %d is value of b",a,b);
+
+20 is the value a & 30 is value of b
+
+a : 20 
+Write a C program to calculate Gross Salary of an employee. Here’s simple program to calculate Gross Salary of an employee in C Programming Language.
+
+Gross salary :
+We need to take input from user and then apply the simple formula to calculate the gross salary i.e. gross salary= basic salary+ dearness allowance+ house rent allowance.
+
+
+output 
+
+ Basic Sal : 15000/-
+ Dearness Allowance : 3000/-
+ House Rent Allowance : 5000/-
+ Gross Salary : Rs.23000/- 
+
+#include<stdio.h>
+int main()
+{
+    float bsal= 15000, dallowance = 3000,hra = 5000;
+    float gross = bsal + dallowance + hra;
+    printf("Basic Sal : %f\nDearness Allowance : %f\nHouse Rent Allowance : %f\nGross Salary : Rs.%f",bsal,dallowance,hra,gross);
+}
+
+
+Runtime input : 
+
+scanf("formatspecifiers",Addressofmembers);
+
+int a;
+
+scanf("%d",&a);
+
+
+float ab;
+int cd;
+scanf("%f%d",&ab,&cd);
+
+printf("Enter ab value: ");
+scanf("%f",&ab);
+printf("Enter cd value: ");
+scanf("%d",&cd);
+
+Write a C program to convert Total days to year, month and days. 
+
+input : 
+31
+Output : 
+0 years, 1 months, 1 days
+
+input : 366
+
+output : 
+1 years, 0 months, 1 days
+
+
+
+Operators: 
+ -> Symbols which perform mathematical or logical operation 
+
+-Arithematic operators
+  -> Uninary 
+  -> Binary
+  -> Terenary
+
+- Assignment operators
+ 
+- Relational Operators
+
+- Logical operators
+
+- Bit Wise Operators
+
+- Special Operators
+
+
+-> Uninary Operator : 
+
+  ->Increment , Decrement Operator
+
+  -> ++, -- 
+  -> Value will altered by 1 
+   
+  => Post , Pre
+ 
+  => Post   Utilize and update
+    eg : a++, b--
+  => Pre  Update and utilize
+    eg: ++a, --b 
+
+
+a = 21, b = 33, c = 12
+
+
+d = ++a - --b + c++ - -a - ++b + --c + a--
+
+
+a= ?  b = ? c = ? d = ?
+
+a = 123 , b = 322 , c = ++a - b--
+
+
+d = a++ - c-- + ++b - --c + ++a +--b - c-- 
+
+
+
+ Binary Operators: 
+   
+  +, -, *, / ,% 
+
+  -> BODMAS 
+  -> Brackets
+  -> Order of
+  -> D - Division
+  -> Mul, ADD, Sub
+
+  
+Assignment Operators: 
+ 
+ = , +=, -=, *=, /= , %= , <<=, >>= 
+
+
+ a = 10 
+ 
+ a = a+ 5 <=>  a += 5
+
+ a = 15 
+
+Relational/Conditional Operators : 
+ 
+  <,>,<=,>=,!=, ==(is equals to)
+
+a = 10 
+b = 15 
+
+-> returns 0(False) and 1 (true)
+
+Logical Operators:
+-> Used for comparing two or more conditions 
+
+Logical And - &&
+
+Logical Or - ||
+
+Logical Not - !
+
+
+Cond1	 cond2    Cond1 && Cond2	cond1 || cond2 
+false(0) false 		false		   false
+true(1)  false 		false		   true
+false    true 		false		   true
+true 	 true		true		   true 
+
+
+!(true)   - false
+!(flase) - true
+
+Bitwise Operators : 
+    Operator which performs the task on binary level are known as 
+    bitwise operators 
+ 
+ -> Bitwise and    &
+ -> Bitwise  or    | 
+ -> Bitwise  Xor   ^
+ -> Left shift     <<
+ -> Right Shift    >>
+
+
+Left Shift << :
+ 
+   12 << 3  
+
+Right Shift >> : 
+
+
+
+
+
+Special Operators: 
+ 
+.  ->   Membership operators
+
+&  Address of 
+
+sizeof() -> size of any variable 
+
+* -> Pointer
+
+int a = 10
+
+sizeof(a) 
+
+Control Statement: 
+ 
+-> Conditional/ Decision Making / Selection Statements 
+   
+   If else statements
+   if else if ladder / Cascaded if else
+   nested if statements
+   switch case 
+
+-> Iterative/ Looping  Statements
+   for loop
+   while loop
+   do while loop
+
+-> Jumping/Branching statements 
+   continue
+   break
+   return 
+
+
+
+
+If else Statement : 
+
+
+if (condition) 
+{
+   //statements
+}
+else
+{
+
+
+}
+
+write a c program to check if the given input is even or odd
+
+input : 5
+
+output : Odd
+
+input : 4876
+ 
+Output : Even
+
+cascaded if else / If else if Ladder
+
+ if(condition)
+ {
+
+
+ }
+ else if(Condition)
+ {
+
+ }
+ else
+ {
+
+ }
+
+
+marks>=91 && marks<=100
+
+
+
+
+Grading System : 
+
+sub : 91 - 100  A+
+      81 - 90   A
+      71 - 80   B+
+      61 - 79   B
+      40 - 60   C
+      <40 	F
+
+
+Write a program to calculate Total Electricity Bill
+
+Type : 
+
+H - House Hold
+  -    <50 units  - 1Rs/unit
+  -    51 - 200   - 1.75Rs/unit
+  -    201 - 500  - 2.25Rs/unit
+  -    >500       - 3 Rs/unit
+
+R - Retail Industries
+  -   <75         - 1.23 Rs/unit
+  -   76 - 175    - 2.35 Rs/unit
+  -   176- 450    - 3.00 Rs/unit
+  -   >450        - 3.75 Rs/unit
+
+L - Large Scale Industry
+  -  <150         - 1.80 Rs/unit
+  -  151 - 500    - 4.21 Rs/unit
+  -  501 - 1500   - 7.56 Rs/unit
+  -  >1500        - 13.84 Rs/unit
+
+Note:  Calculate wrt Slabs
+Discount : 
+   H - 5%
+   R - 7 %
+   L - 12 %
+
+Input : 
+H
+51
+Output : 
+-House Hold Connection-
+Current Bill - Rs. 51.75/-
+Discount - Rs. 2.58/-
+Total Bill - Rs. 49.16/-
+
+
+Nested If else:
+
+
+if(condition)
+{
+ 	
+}
+else if(Condition)
+{
+   if(condition)
+   {
+   }
+   else 
+}
+
+
+
+
+sample input : 
+ 
+Age: 35
+
+Height: 4.6
+
+Output: 
+
+Not Allowed. Reason -Height 
+
+
+Sampleinput2: 
+Age: 45
+Height : 5.8
+Weight : 75
+Output : 
+Allowed
+
+Sampleinput3: 
+Age: 37
+Height : 5.6
+Weight : 95
+Output : 
+Add Extra Ropes
+Allowed
+
+https://bit.ly/MitAdt-C
+
+
+switch Case: 
+ 
+
+
+
+switch(Expression)
+{
+
+   case label1:
+		//statements
+		break;
+   case label2: 
+		//statements
+   case label3: 
+		//statements
+   case label4: 
+		//statements
+		break;	
+   case label5: 
+		//statements
+   .....
+   default : 
+	 	//statements
+}
+
+Label can be int or char
+
+
+
+
+
+Type Casting :
+
+ -> Changing value from one data type to another datatypes
+
+widening 
+
+-> Converting from smaller Datatype to Larger Datatype
+-> Implicit Typecasting (Automatic)
+
+
+Narrowing
+
+Syntax:  
+
+(datatype)variable
+
+
+Iterations/Looping Statements
+
+-> While loop
+-> do while Loop
+-> For loop
+
+while Loop : 
+ 
+ syntax : 
+    
+  while(condition)
+  {
+	//statements
+  }
+
+
+
+for(initialization ; condition ; inc/dec)
+{
+  //statements
+} 
+
+do{
+		
+	//statements
+}while(condition);
+
+
+
+while(Condition)
+{
+  //statements
+}
+
+
+
+
+int num = 85,78,56,
+
+
+Arrays: 
+   => Collection of Similar Datatype elements represented based on index values 
+
+
+Syntax: 
+ 
+
+-> datatypes arrayname[size] = {data};
+
+Note: data is separated by comma
+
+int arr[5] = {78,89,45,65,12};
+
+
+
+
+5
+78 41 666 125 48
+
+ouput : 
+666
+
+
+
+
+
+
+datatype arrayname[rowsize][colsize] = 
+
+arr[rowsize][colsize]
+
+		   // 0  1  2
+int marks[2][3] = { 
+                    {45,56,74},     // 0
+		    {88,46,77}      // 1
+				}
+
+marks[1][1]
+
+marks[n-1][m-1]
+
+i\j0  1  2  3  4 
+---------------
+0| 1  2  3  4  6 
+1| 5  6  7  8  7
+2| 9  10 11 12 8 
+3| 13 14 15 16 0
+4| 1  2  3  4  5
+
+i j  i j i j
+0 0
+1 0, 1 1
+2 0  2 1 2 2
+
+
+Pointer Arithmetic:  
+    
+  Performing Arithmetic operation on pointer variable
+
+
+
+int arr[2]  = {56,45}
+
+arr[0] = 56  | -> 1000
+arr[1] = 45  | -> 1002
+
+
+arr = 1000
+   
+i - 0 -n 
+arr[i]
+
+*(arr+i)
+    // i*(sizeof(Datatype)
+
+  *(1000  + (0 * 2))  => *(1000)
+
+  *(1000 + (1 *2)) = > *(1002) 
+ 
+Stack 
+
+Static memory Allocation:
+
+-> Allocated at Compile Time
+-> Memory size if fixed and Predefined
+-> Memory is stored in stack memory
+-> Memory is automatically deallocated at the end of program or function
+-> More time for Processing
+
+
+Dynamic Memory Allocation: 
+-> Allocated at Runtime
+-> Memory can be chanced during the runtime
+-> Memory is stored in Heap Memory
+-> Memory must be Deallocated explicitly using function
+-> Less and efficient in processing Time
+
+
+
+ use stdlib.h 
+
+function : 
+ 
+malloc() : Memory Allocation 
+         : Allocates a single block of requested memory 
+         : Default value is Garbage Value
+ 
+	 : Function Signature -    void *malloc(sizeofarr * sizeofdatatype)
+
+
+calloc() : Contagious Allocation
+ 	 : Allocates multiple blocks of requested memory
+	 : Default value is 0
+
+	 :Function Signature  - void *calloc(sizeofarr,size_of_datatype)
+
+realloc() : Re-Allocation
+ 	  : allows to change the size of previously allocated memory
+	  
+   	  :Function Signature - void *relloc(void *ptr, new_size)
+ 
+
+free()   : help to deallocate the memory allocated
+
+         : function signature  - void free(void *ptr)
+
+
+
+
+
+
+
+
+
+Strings : 
+ 
+-> it is sequence of character terminated with null('\0')
+
+char c[]  = "Hello";
+
+
+
+
+char c[] = "C Programming";
+
+char ch[15] = "C programming";
+
+char c[] = {'H','E','L','L','O'};
+
+char c[5] = {'H','E','L','L','O'};
+
+
+
+read the runtime : 
+ 
+scanf("%s",c);
+
+Escape Sequence:
+
+%[^\n]s -> reads data till we provide nextline
+%[^.]s  -> reads data till we provide Fullstop/Period(.)
+%[^,]s  -> reads data till we provide comma(,)
+
+
+Input : 
+Hello 123
+
+Output : 
+Upper case : 1
+Lower case : 4
+Vowels     : 2
+Consonants : 3
+Symbols    : 1
+Digits     : 3
+Sum        : 6
+
+
+
+
+Structures: 
+ 
+ -> It help to create a used defined datatype which can store multiple pre defined or user defined members 
+
+Keyword: struct
+
+syntax : 
+
+struct Structure_name{
+   //members declaration
+}Structure variable;
+
+
+Student 
+ -> Name [30]		-> String(char array)    -> 30Bytes 
+ -> Marks of 3 sub[3]      -> array(int array)   ->  6Bytes
+ -> Avg 		-> variable(float)       ->  4 Bytes
+ -> Grade		-> char                  ->  1 Bytes
+                                                     ------------
+ 						     41Bytes
+
+-> Memory Assign is sum of size of Every datatype
+
+
+Union: 
+   It help to create a used defined datatype which can store multiple pre defined or user defined members 
+
+Student 
+ -> Name [30]		-> String(char array)    -> 30Bytes 
+ -> Marks of 3 sub[3]   -> array(int array)      ->  6Bytes
+ -> Avg 		-> variable(float)       ->  4 Bytes
+ -> Grade		-> char                  ->  1 Bytes
+                                                   -------------
+                                                    30 Bytes
+
+-> Memory Assigned is Max of all members 
+
+keyword: union
+
+syntax: 
+
+union Union_name{
+   //union members
+};
+
+
+Enum : 
+   -> Enumeration 
+   -> it a used defined type
+   -> Used for assigning names to Integral constants. 
+
+syntax : 
+
+ enum enum_name {integral constants seperated with comma}
+
+
+enum state {working = 1, Failed = 0}\
+
+enum day_of_Week {sun,mon,tue,wed,thu,fri,sat}
+
+
+sun = 0
+mon - 1
+tue - 2
+...
+sat - 6
+
+enum day_of_Week {sun,mon,tue,wed=15,thu,fri,sat}
+sun = 0
+mon - 1
+tue - 2
+wed - 16
+thu - 17
+
+
+
+typedef:
+  -> help to provide alias name
+
+
+
+
+You are working on an Employee Management System for a company. The system needs to store information about employees and their monthly salaries. The program should be able to perform the following tasks:
+
+Add a new employee: Record the employee's ID, name, department, and monthly salary for the past 12 months.
+Calculate annual salary: Compute the annual salary for a specific employee by summing up the monthly salaries.
+Display employee details: Show the details of an employee, including their annual salary.
+Find the highest earner: Identify the employee with the highest annual salary.
+Requirements:
+Use structures to represent employees.
+Ensure the program can handle up to 100 employees.
+Implement functions to perform each task.
+Structure Definition:
+Define a structure Employee to store the employee's information.
+
+Input/Output Specifications:
+Input:
+For adding a new employee, input the employee ID, name, department, and monthly salaries.
+For displaying employee details, input the employee ID.
+For finding the highest earner, no input is required.
+Output:
+Details of the specific employee.
+The employee with the highest annual salary.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
